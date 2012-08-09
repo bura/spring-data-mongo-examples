@@ -16,6 +16,14 @@ public class JournalRecord {
 
 	private String text;
 
+	public JournalRecord() {}
+
+	public JournalRecord(Integer type, Date createDate, String text) {
+		this.type = type;
+		this.createDate = createDate;
+		this.text = text;
+	}
+
 	public Integer getType() {
 		return type;
 	}

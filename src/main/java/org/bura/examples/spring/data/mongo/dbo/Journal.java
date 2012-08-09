@@ -14,6 +14,49 @@ public class Journal {
 
 	private Integer recordCount;
 
+	public Journal() {}
+
+	public Journal(String id, String name, List<JournalRecord> records) {
+		this.id = id;
+		this.name = name;
+		this.records = records;
+		if (records != null) {
+			this.recordCount = records.size();
+		}
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public List<JournalRecord> getRecords() {
+		return records;
+	}
+
+	public void setRecords(List<JournalRecord> records) {
+		this.records = records;
+	}
+
+	public Integer getRecordCount() {
+		return recordCount;
+	}
+
+	public void setRecordCount(Integer recordCount) {
+		this.recordCount = recordCount;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
