@@ -1,0 +1,26 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+group = 'org.bura.examples'
+version = '0.0.1-SNAPSHOT'
+
+sourceCompatibility = '1.7'
+targetCompatibility = '1.7'
+
+dependencies {
+	testCompile "org.springframework:spring-test:3.2.+"
+	testCompile "org.springframework.data:spring-data-mongodb:1.1.+"
+	testCompile 'de.flapdoodle.embedmongo:de.flapdoodle.embedmongo:1.16'
+	testCompile 'junit:junit:4.+'
+	
+	testRuntime 'cglib:cglib-nodep:2.2.+'
+}
+
+repositories {
+	mavenCentral()
+	mavenRepo url: 'http://maven.springframework.org/milestone'
+}
+
+uploadArchives {
+	repositories { flatDir { dirs 'repos' } }
+}
