@@ -1,26 +1,20 @@
 package org.bura.examples.spring.data.mongo.dbo;
 
 
-import java.util.Date;
-
-
 public class JournalRecord {
 
-	public static final Integer INFO_TYPE = 0;
+	public static final Integer INFO = 0;
 
-	public static final Integer WARN_TYPE = 1;
+	public static final Integer ERROR = 1;
 
 	private Integer type;
-
-	private Date createDate;
 
 	private String text;
 
 	public JournalRecord() {}
 
-	public JournalRecord(Integer type, Date createDate, String text) {
+	public JournalRecord(Integer type, String text) {
 		this.type = type;
-		this.createDate = createDate;
 		this.text = text;
 	}
 
@@ -30,14 +24,6 @@ public class JournalRecord {
 
 	public void setType(Integer type) {
 		this.type = type;
-	}
-
-	public Date getCreateDate() {
-		return createDate;
-	}
-
-	public void setCreateDate(Date createDate) {
-		this.createDate = createDate;
 	}
 
 	public String getText() {
@@ -54,9 +40,6 @@ public class JournalRecord {
 		builder.append("JournalRecord[");
 		if (type != null) {
 			builder.append("type=").append(type).append(", ");
-		}
-		if (createDate != null) {
-			builder.append("createDate=").append(createDate).append(", ");
 		}
 		if (text != null) {
 			builder.append("text=").append(text);

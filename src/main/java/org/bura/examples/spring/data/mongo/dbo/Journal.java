@@ -16,6 +16,10 @@ public class Journal {
 
 	public Journal() {}
 
+	public Journal(String name, List<JournalRecord> records) {
+		this(null, name, records);
+	}
+
 	public Journal(String id, String name, List<JournalRecord> records) {
 		this.id = id;
 		this.name = name;
