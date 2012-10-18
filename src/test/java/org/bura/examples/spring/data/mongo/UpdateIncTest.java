@@ -1,8 +1,6 @@
 package org.bura.examples.spring.data.mongo;
 
 
-import java.util.Arrays;
-
 import org.bura.examples.spring.data.mongo.dbo.Journal;
 import org.junit.Assert;
 import org.junit.Test;
@@ -32,11 +30,11 @@ public class UpdateIncTest extends TestCaseWithMongo {
 
 		journal = mng.findOne(Query.query(Criteria.where("_id").is(journal.getId())), Journal.class);
 		log.info("After inc: " + journal);
-		
+
 		Assert.assertNotNull(journal);
 		Assert.assertEquals(journal.getRecordCount(), Integer.valueOf(2));
 	}
-	
+
 	@Test
 	public void testUpdateDec() {
 		MongoTemplate mng = getMongoTemplate();
@@ -52,7 +50,7 @@ public class UpdateIncTest extends TestCaseWithMongo {
 
 		journal = mng.findOne(Query.query(Criteria.where("_id").is(journal.getId())), Journal.class);
 		log.info("After dec: " + journal);
-		
+
 		Assert.assertNotNull(journal);
 		Assert.assertEquals(journal.getRecordCount(), Integer.valueOf(5));
 	}
